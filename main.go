@@ -1,7 +1,8 @@
 package main
 
 import (
-	"fmt"
+	"alfred/service/action"
+	"alfred/service/flags"
 	"github.com/urfave/cli/v2"
 	"log"
 	"os"
@@ -9,11 +10,11 @@ import (
 
 func main() {
 	app := &cli.App{
-		Name:  "alfred",
-		Usage: "my personal butler",
-		Action: func(c *cli.Context) error {
-			fmt.Println("Hi, master.")
-			return nil
+		Name:   "alfred",
+		Usage:  "my personal butler",
+		Action: action.Action,
+		Flags: []cli.Flag{
+			flags.Lang,
 		},
 	}
 
