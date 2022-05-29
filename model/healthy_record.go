@@ -1,8 +1,8 @@
 package model
 
-type Bodystatus struct {
+type BodyStatus struct {
 	Id                int     `json:"id"`
-	Name              string  `json:"name"`
+	UserId            int     `json:"user_id"`
 	Weight            int     `json:"weight"`
 	Height            int     `json:"height"`
 	BodyFatPercentage float64 `json:"body_fat_percentage"`
