@@ -11,7 +11,7 @@ func JsonMarshal(item interface{}) (string, error) {
 	}
 }
 
-func JsonUnmarshal(str string, item *interface{}) error {
+func JsonUnmarshal(str string, item interface{}) error {
 	bytes := []byte(str)
 	if err := json.Unmarshal(bytes, item); err != nil {
 		return err
