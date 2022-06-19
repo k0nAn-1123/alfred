@@ -1,22 +1,24 @@
 package main
 
 import (
-	"alfred/service/action"
-	"alfred/service/flags"
-	"github.com/urfave/cli/v2"
+	"alfred/service/command"
+	"fmt"
 	"log"
 	"os"
+
+	"github.com/urfave/cli/v2"
 )
 
 func main() {
 	app := &cli.App{
-		Name:   "alfred",
-		Usage:  "my personal butler",
-		Action: action.Action,
-		Flags: []cli.Flag{
-			flags.Lang,
+		Name:  "greet",
+		Usage: "fight the loneliness!",
+		Action: func(c *cli.Context) error {
+			fmt.Println("Hello friend!")
+			return nil
 		},
 	}
+	app.Commands = command.Command()
 
 	err := app.Run(os.Args)
 	if err != nil {

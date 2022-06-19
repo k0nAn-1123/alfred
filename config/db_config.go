@@ -2,11 +2,12 @@ package config
 
 import (
 	"fmt"
+
 	"github.com/pelletier/go-toml"
 )
 
 func InitDbConfig() string {
-	filePath := "./conf/config.toml"
+	filePath := "./config.toml"
 	config, err := toml.LoadFile(filePath)
 	if err != nil {
 		panic(err)
