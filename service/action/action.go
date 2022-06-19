@@ -3,8 +3,9 @@ package action
 import (
 	"alfred/constant/command_constant"
 	"fmt"
-	"github.com/urfave/cli/v2"
 	"time"
+
+	"github.com/urfave/cli/v2"
 )
 
 func Action(c *cli.Context) error {
@@ -24,6 +25,9 @@ func Action(c *cli.Context) error {
 		case command_constant.RECORD:
 			// TODO by 1123 write code here
 			fmt.Println("some trash talk")
+			var weight int
+			fmt.Scanf("Pleash input your weight here: %d", weight)
+			fmt.Println(weight)
 		case command_constant.ADD:
 			// TODO by 1123 write code here too
 			fmt.Println("some trash talk again")
